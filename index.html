@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção Preventiva - Equipamentos e Obras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🛠️ Controle de Manutenção Preventiva</h1>
+        <p>Gerenciamento de equipamentos por obra</p>
+    </header>
+
+    <main class="container">
+        <!-- Formulário de Cadastro -->
+        <section class="card-form">
+            <h2>Cadastrar Equipamento</h2>
+            <form id="formEquipamento">
+                <div class="input-group">
+                    <label for="equipamento">Equipamento / Máquina:</label>
+                    <input type="text" id="equipamento" placeholder="Ex: Elevador de Carga 01" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="obra">Obra / Local:</label>
+                    <input type="text" id="obra" placeholder="Ex: Obra Residencial Torres" required>
+                </div>
+
+                <div class="input-group-row">
+                    <div class="input-group">
+                        <label for="ultimaData">Última Revisão:</label>
+                        <input type="date" id="ultimaData" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dataVencimento">Próximo Vencimento:</label>
+                        <input type="date" id="dataVencimento" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnSalvar">Cadastrar Equipamento</button>
+            </form>
+        </section>
+
+        <!-- Painel de Exibição -->
+        <section class="painel-lista">
+            <h2>Painel de Equipamentos Acompanhados</h2>
+            
+            <!-- A lista onde os cards serão injetados pelo JS -->
+            <ul id="listaEquipamentos" class="grid-cards"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

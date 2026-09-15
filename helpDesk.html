@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Chamados de Obra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3. PAINEL DO TÉCNICO -->
+    <section class="card">
+      <div class="card-header">
+        <h2> Atendimento e Relatório</h2>
+        <span class="badge badge-tecnico">Técnico</span>
+      </div>
+
+      <div class="info-status">
+        <p><strong>Status:</strong> <span id="status-chamado" class="status-tag">Aguardando</span></p>
+        <p><strong>Tempo Decorrido:</strong> <span id="cronometro" class="timer">00:00:00</span></p>
+      </div>
+
+      <button id="btn-iniciar" class="btn btn-success" disabled onclick="iniciarAtendimento()">Iniciar Manutenção</button>
+
+      <div id="area-finalizacao" class="area-finalizacao hidden">
+        <div class="form-group">
+          <label for="tecnico-relatorio">Relatório Técnico do Serviço</label>
+          <textarea id="tecnico-relatorio" rows="3" placeholder="Descreva os procedimentos e peças utilizadas..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Assinatura Digital do Cliente da Obra</label>
+          <div class="canvas-container">
+            <canvas id="canvas-assinatura" width="400" height="120"></canvas>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="limparAssinatura()">Limpar Assinatura</button>
+        </div>
+
+        <button type="button" class="btn btn-danger" onclick="finalizarAtendimento()">Finalizar e Coletar Assinatura</button>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

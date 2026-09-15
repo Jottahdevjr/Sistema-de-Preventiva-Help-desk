@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor</title>
+      <style>/* Reset Básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eef2f5;
+  color: #333;
+  padding-bottom: 40px;
+}
+
+.header {
+  background-color: #1e293b;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Cards (Paineis) */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.card-header h2 {
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.badge-cliente { background-color: #e0f2fe; color: #0369a1; }
+.badge-gestor { background-color: #fef3c7; color: #b45309; }
+.badge-tecnico { background-color: #dcfce7; color: #15803d; }
+
+/* Formulários e Inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #475569;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: #f8fafc;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #fff;
+}
+
+/* Botões */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn:disabled { background-color: #cbd5e1 !important; cursor: not-allowed; }
+
+.btn-primary { background-color: #2563eb; color: white; }
+.btn-warning { background-color: #d97706; color: white; }
+.btn-success { background-color: #16a34a; color: white; }
+.btn-danger { background-color: #dc2626; color: white; }
+.btn-secondary { background-color: #64748b; color: white; }
+
+.btn-sm {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Status e Cronômetro */
+.info-status {
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-tag {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.timer {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #dc2626;
+}
+
+/* Canvas de Assinatura */
+.canvas-container {
+  border: 2px dashed #94a3b8;
+  border-radius: 6px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+canvas {
+  cursor: crosshair;
+  touch-action: none; /* Para funcionar no celular */
+}
+
+/* Classes Utilitárias */
+.hidden {
+  display: none;
+}
+
+.area-finalizacao {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+}</style>
+</head>
+<body>
+  <!-- 2. PAINEL DO GESTOR -->
+    <section class="card">
+      <div class="card-header">
+        <h2> Atribuição de Técnico</h2>
+        <span class="badge badge-gestor">Gestor</span>
+      </div>
+
+      <div class="form-group">
+        <label for="gestor-chamados">Chamados Pendentes</label>
+        <select id="gestor-chamados">
+          <option value="">Selecione um chamado aberto...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="gestor-tecnico">Técnico Responsável</label>
+        <select id="gestor-tecnico">
+          <option value="Técnico Carlos">Técnico Carlos</option>
+          <option value="Técnica Mariana">Técnica Mariana</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-warning" onclick="encaminharChamado()">Encaminhar para Técnico</button>
+    </section>
+</body>
+</html>
